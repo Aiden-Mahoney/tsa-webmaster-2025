@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gettysburg Community Resource Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --maroon: #7a1e1e; /* Gettysburg red */
+            --nav-color: #7a1e1e; /* changed from navy to maroon */
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+
+            /* maroon replaced with Gettysburg square image */
+            background-image:
+                linear-gradient(rgba(122, 30, 30, 0.65), rgba(122, 30, 30, 0.65)),
+                url("https://upload.wikimedia.org/wikipedia/commons/e/ed/Journey_Through_Hallowed_Ground_Byway_-_Lincoln_Square_in_Downtown_Gettysburg_-_NARA_-_7719715.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.1em;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--nav-color);
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--maroon);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            margin-top: 0;
+        }
+
+        /* Quick Access Buttons */
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .quick-btn {
+            display: block;
+            text-align: center;
+            padding: 12px 14px;
+            background: var(--maroon);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        .quick-btn:hover {
+            filter: brightness(0.95);
+        }
+
+        .subhead {
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Gettysburg Community Resource Hub</h1>
+        <p>Connecting Gettysburg and surrounding areas to local support, services, and programs that help our community thrive.</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Resource Directory</a></li>
+            <li><a href="highlights.html">Highlights</a></li>
+            <li><a href="submit.html">Submit a Resource</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Welcome</h2>
+            <p>
+                Use this hub to explore community resources in and around Gettysburg, PA.
+                You can browse the full directory, filter by category, or use quick-access buttons below to jump right to what you need.
+            </p>
+
+            <div class="subhead">Quick Access: Categories</div>
+            <div class="quick-access-grid">
+                <a class="quick-btn" href="directory.html?category=Food%20Assistance">Need food support?</a>
+                <a class="quick-btn" href="directory.html?category=Housing%20%26%20Shelter">Need housing or shelter help?</a>
+                <a class="quick-btn" href="directory.html?category=Family%20%26%20Financial%20Support">Need family or financial support?</a>
+                <a class="quick-btn" href="directory.html?category=Volunteer%20%26%20Community%20Programs">Looking for volunteer hours?</a>
+            </div>
+
+            <div class="subhead">Quick Access: Access Options</div>
+            <div class="quick-access-grid">
+                <a class="quick-btn" href="directory.html?access=Walk-in%20Friendly">Show walk-in friendly resources</a>
+                <a class="quick-btn" href="directory.html?access=Appointment%20or%20Referral">Show appointment/referral resources</a>
+                <a class="quick-btn" href="directory.html?access=Volunteer%20Opportunity">Show volunteer opportunities</a>
+            </div>
+
+            <div class="subhead">Quick Access: Popular Combos</div>
+            <div class="quick-access-grid">
+                <a class="quick-btn" href="directory.html?category=Food%20Assistance&access=Walk-in%20Friendly">Food support (walk-in)</a>
+                <a class="quick-btn" href="directory.html?category=Volunteer%20%26%20Community%20Programs&access=Volunteer%20Opportunity">Volunteer hours (fast)</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Gettysburg Community Resource Hub • Built for the community</p>
+    </footer>
+
+</body>
+</html>

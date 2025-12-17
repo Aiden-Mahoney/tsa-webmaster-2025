@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resource Directory | Gettysburg Community Resource Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --maroon: #7a1e1e;
+            --nav-color: #7a1e1e; /* changed from navy to maroon */
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            background-image:
+                linear-gradient(rgba(122, 30, 30, 0.65), rgba(122, 30, 30, 0.65)),
+                url("https://upload.wikimedia.org/wikipedia/commons/e/ed/Journey_Through_Hallowed_Ground_Byway_-_Lincoln_Square_in_Downtown_Gettysburg_-_NARA_-_7719715.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.05em;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--nav-color);
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--maroon);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        /* Filters */
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .filters label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .filters input, .filters select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .card {
+            border: 1px solid #e6e6e6;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            background: white;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+        }
+
+        .pill-row {
+            margin: 8px 0 10px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .pill {
+            display: inline-block;
+            font-size: 0.85em;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #f2f2f2;
+        }
+
+        .card a {
+            color: var(--maroon);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .muted {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* NEW: Card image */
+        .card-img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Resource Directory</h1>
+        <p>Search and filter community resources available in and around Gettysburg, PA.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Resource Directory</a></li>
+            <li><a href="highlights.html">Highlights</a></li>
+            <li><a href="submit.html">Submit a Resource</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Search & Filter</h2>
+
+            <div class="filters">
+                <div>
+                    <label for="searchInput">Search</label>
+                    <input id="searchInput" type="text" placeholder="Search by name, services, keywords..." />
+                </div>
+
+                <div>
+                    <label for="categoryFilter">Category</label>
+                    <select id="categoryFilter">
+                        <option value="All">All</option>
+                        <option value="Food Assistance">Food Assistance</option>
+                        <option value="Housing & Shelter">Housing & Shelter</option>
+                        <option value="Family & Financial Support">Family & Financial Support</option>
+                        <option value="Volunteer & Community Programs">Volunteer & Community Programs</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="accessFilter">Access</label>
+                    <select id="accessFilter">
+                        <option value="All">All</option>
+                        <option value="Walk-in Friendly">Walk-in Friendly</option>
+                        <option value="Appointment or Referral">Appointment or Referral</option>
+                        <option value="Volunteer Opportunity">Volunteer Opportunity</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="cards" id="cards"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Gettysburg Community Resource Hub • Resource Directory</p>
+    </footer>
+
+    <script>
+        const resources = [
+            {
+                name: "Gettysburg Community Soup Kitchen",
+                category: "Food Assistance",
+                access: "Walk-in Friendly",
+                description: "Provides free, nourishing meals to individuals in need. Community-supported and volunteer-powered.",
+                location: "22 W High St, Gettysburg, PA 17325",
+                contact: "(717) 334-2773 • supsk3445@gmail.com",
+                website: "https://www.gettysburgsoupkitchen.org/",
+                review: "Locals often mention the welcoming environment and consistent meal service.",
+                imageUrl: "https://static.wixstatic.com/media/c7899a_976c34df226349ca874de074876b9ffc~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85,enc_auto/c7899a_976c34df226349ca874de074876b9ffc~mv2.jpg"
+            },
+            {
+                name: "South Central Community Action Programs (SCCAP) – Adams County Office",
+                category: "Family & Financial Support",
+                access: "Appointment or Referral",
+                description: "Offers multiple programs including housing support, food pantries, family services, and financial stability resources.",
+                location: "153 N Stratton St, Gettysburg, PA 17325",
+                contact: "(717) 334-7634 • sccapinfo@sccap.org",
+                website: "https://www.sccap.org/",
+                review: "Community members highlight the variety of services and supportive staff.",
+                imageUrl: "https://images.squarespace-cdn.com/content/v1/5a46988a90badea8b8baee23/1613149949593-53OF7IVDV6YMVUZH26UL/Smiling%2Bman%2Bholding%2Btwo%2Byoung%2Bchildren"
+            },
+            {
+                name: "United Way (Local Support & Referrals)",
+                category: "Family & Financial Support",
+                access: "Appointment or Referral",
+                description: "Connects residents to local programs and partner agencies; supports community-wide initiatives and assistance resources.",
+                location: "Gettysburg Area (varies by program)",
+                contact: "See website for contact options",
+                website: "https://www.unitedway.org/",
+                review: "Often praised for connecting people to the right help when they’re not sure where to start.",
+                imageUrl: "https://upload.wikimedia.org/wikipedia/commons/c/cd/United_Way_Worldwide_logo.svg"
+            },
+            {
+                name: "The Gleaning Project of South Central PA",
+                category: "Volunteer & Community Programs",
+                access: "Volunteer Opportunity",
+                description: "Organizes volunteers to glean fresh produce from farms and distribute it through local produce stands and partners.",
+                location: "Adams County: 153 N Stratton St, Gettysburg, PA",
+                contact: "(717) 884-8373 • thegleaningproject@gmail.com",
+                website: "https://thegleaningproject.org/volunteer",
+                review: "Volunteers frequently describe it as meaningful, hands-on service with a real community impact.",
+                imageUrl: "https://images.squarespace-cdn.com/content/v1/5926eba3e58c62c9ead5983d/1558108861671-IRH2S1PPV90LT91YBIEA/DSC_0513.JPG"
+            },
+            {
+                name: "Adams Rescue Mission (Gettysburg)",
+                category: "Housing & Shelter",
+                access: "Appointment or Referral",
+                description: "Provides shelter and recovery programs plus community support services (including thrift store support for the mission).",
+                location: "2515 York Rd, Gettysburg, PA 17325",
+                contact: "(717) 334-7502",
+                website: "https://adamsrescuemission.org/",
+                review: "Reviews commonly mention the mission’s community presence and helpful services.",
+                imageUrl: "https://cdn10.localdatacdn.com/pa/gettysburg/5044191/original/8snKDMWeLO.jpg"
+            }
+        ];
+
+        const cardsEl = document.getElementById("cards");
+        const searchInput = document.getElementById("searchInput");
+        const categoryFilter = document.getElementById("categoryFilter");
+        const accessFilter = document.getElementById("accessFilter");
+
+        function matches(resource, q, cat, access) {
+            const text = (resource.name + " " + resource.description + " " + resource.category + " " + resource.location).toLowerCase();
+            const qOk = !q || text.includes(q.toLowerCase());
+            const catOk = (cat === "All") || (resource.category === cat);
+            const accessOk = (access === "All") || (resource.access === access);
+            return qOk && catOk && accessOk;
+        }
+
+        function render() {
+            const q = searchInput.value.trim();
+            const cat = categoryFilter.value;
+            const access = accessFilter.value;
+
+            const filtered = resources.filter(r => matches(r, q, cat, access));
+
+            cardsEl.innerHTML = filtered.map(r => `
+                <div class="card">
+                    <img class="card-img" src="${r.imageUrl}" alt="${r.name}">
+                    <div class="card-body">
+                        <h3>${r.name}</h3>
+                        <div class="pill-row">
+                            <span class="pill">${r.category}</span>
+                            <span class="pill">${r.access}</span>
+                        </div>
+                        <p class="muted">${r.description}</p>
+                        <p><strong>Location:</strong> ${r.location}</p>
+                        <p><strong>Contact:</strong> ${r.contact}</p>
+                        <p><a href="${r.website}" target="_blank" rel="noopener">Visit Website</a></p>
+                        <p class="muted"><strong>Review notes:</strong> ${r.review}</p>
+                    </div>
+                </div>
+            `).join("") || `<p class="muted">No matching resources found. Try adjusting your search or filters.</p>`;
+        }
+
+        // NEW: pre-select filters from Home page buttons
+        function applyUrlFilters() {
+            const params = new URLSearchParams(window.location.search);
+
+            const category = params.get("category");
+            const access = params.get("access");
+            const q = params.get("q");
+
+            if (category) categoryFilter.value = category;
+            if (access) accessFilter.value = access;
+            if (q) searchInput.value = q;
+        }
+
+        searchInput.addEventListener("input", render);
+        categoryFilter.addEventListener("change", render);
+        accessFilter.addEventListener("change", render);
+
+        applyUrlFilters();
+        render();
+    </script>
+
+</body>
+</html>
