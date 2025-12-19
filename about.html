@@ -8,37 +8,119 @@
     <style>
         :root { --maroon:#7a1e1e; --nav-color:#7a1e1e; }
 
-        body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#f4f4f4; color:#333; }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+            color:#333;
+        }
 
-        header {
-            color:#fff; padding:50px 20px; text-align:center;
+        header{
+            color:#fff;
+            padding:50px 20px;
+            text-align:center;
             background-image:
                 linear-gradient(rgba(122,30,30,.65), rgba(122,30,30,.65)),
                 url("https://upload.wikimedia.org/wikipedia/commons/e/ed/Journey_Through_Hallowed_Ground_Byway_-_Lincoln_Square_in_Downtown_Gettysburg_-_NARA_-_7719715.jpg");
-            background-size:cover; background-position:center;
+            background-size:cover;
+            background-position:center;
         }
 
         nav { background:var(--nav-color); padding:10px 0; }
-        nav ul { list-style:none; margin:0; padding:0; display:flex; justify-content:center; gap:30px; flex-wrap:wrap; }
-        nav a { color:#fff; text-decoration:none; font-weight:bold; }
-        nav a:hover { text-decoration:underline; }
+        nav ul{
+            list-style:none;
+            margin:0;
+            padding:0;
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            flex-wrap:wrap;
+        }
+        nav a{ color:#fff; text-decoration:none; font-weight:bold; }
+        nav a:hover{ text-decoration:underline; }
 
-        main { max-width:1000px; margin:40px auto; padding:0 20px; }
+        main{
+            max-width:1000px;
+            margin:40px auto;
+            padding:0 20px;
+        }
 
-        section {
-            background:#fff; padding:25px; margin-bottom:30px;
+        .grid{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap:16px;
+        }
+
+        .box{
+            background:#fff;
+            padding:22px;
             border-left:6px solid var(--maroon);
             box-shadow:0 2px 8px rgba(0,0,0,.1);
         }
 
-        footer { background:#333; color:#fff; text-align:center; padding:15px; margin-top:40px; }
+        .box h2{
+            margin:0 0 10px 0;
+            color:#1f2a44;
+            font-size:1.25em;
+        }
+
+        .box p{ margin:0 0 10px 0; line-height:1.5; }
+        .box p:last-child{ margin-bottom:0; }
+
+        .box ul{ margin:8px 0 0 18px; }
+        .box li{ margin:6px 0; }
+
+        .pill{
+            display:inline-block;
+            padding:6px 10px;
+            border-radius:999px;
+            background:#f2f2f2;
+            font-size:.9em;
+            margin:6px 6px 0 0;
+        }
+
+        .link-list a{
+            color: var(--maroon);
+            font-weight: bold;
+            text-decoration:none;
+        }
+        .link-list a:hover{ text-decoration:underline; }
+
+        .note{
+            background:#fff7f7;
+            border:1px solid #f0c7c7;
+            border-left:6px solid var(--maroon);
+            padding:16px;
+            border-radius:10px;
+            margin-top:10px;
+        }
+
+        footer{
+            background:#333;
+            color:#fff;
+            padding:18px 15px;
+            margin-top:40px;
+        }
+        .footer-inner{
+            max-width:1000px;
+            margin:0 auto;
+            display:flex;
+            gap:16px;
+            justify-content:space-between;
+            align-items:flex-start;
+            flex-wrap:wrap;
+        }
+        .footer-left,.footer-right{ flex:1 1 320px; }
+        .footer-right{ text-align:right; }
+        .footer-right a{ color:#fff; text-decoration:underline; }
+        @media (max-width:700px){ .footer-right{ text-align:left; } }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>About This Hub</h1>
-    <p>Why this website exists and how to use it.</p>
+    <h1>About</h1>
+    <p>Project documentation, judge notes, sources, and supporting materials for the Gettysburg Community Resource Hub.</p>
 </header>
 
 <nav>
@@ -52,33 +134,84 @@
 </nav>
 
 <main>
-    <section>
-        <h2>Purpose</h2>
-        <p>
-            The Gettysburg Community Resource Hub is designed to help residents quickly find local support services,
-            nonprofit organizations, volunteer opportunities, and community programs in the Gettysburg area.
-        </p>
-    </section>
+    <div class="grid">
 
-    <section>
-        <h2>How to Use</h2>
-        <p>
-            Visit the Resource Directory to search and filter resources by category or access type.
-            Use the Home page quick-access buttons to jump straight to common needs.
-        </p>
-    </section>
+        <section class="box">
+            <h2>Project PDFs</h2>
+            <p class="link-list">
+                • <a href="Work_Log.pdf" target="_blank" rel="noopener">Work log</a><br>
+                • <a href="Copyright_Checklist.pdf" target="_blank" rel="noopener">Copyright Checklist</a>
+            </p>
+        </section>
 
-    <section>
-        <h2>Suggestion Box</h2>
-        <p>
-            If you know a resource that should be included, use the “Submit a Resource” page to share it.
-        </p>
-    </section>
+        <section class="box">
+            <h2>Note to Judges</h2>
+            <div class="note">
+                <p><strong>Navigation:</strong> Use the menu at the top of every page to move between pages.</p>
+                <p><strong>Quick Access:</strong> Home page buttons jump to the directory with filters pre-selected.</p>
+                <p><strong>Directory Tools:</strong> Search, filter, and reset options are available.</p>
+                <p><strong>Submission Form:</strong> A working form displays a success message after submission.</p>
+            </div>
+        </section>
+
+        <section class="box">
+            <h2>TSA Background</h2>
+            <p>
+                This is my <strong>4th year</strong> participating in TSA. I chose the Webmaster event to step
+                outside of my comfort zone and challenge myself to learn new skills in web design,
+                structure, and user experience.
+            </p>
+        </section>
+
+        <section class="box">
+            <h2>How This Website Meets the Theme Requirements</h2>
+            <span class="pill">Interactive Directory</span>
+            <span class="pill">Highlights</span>
+            <span class="pill">Submission Form</span>
+            <span class="pill">Additional Content</span>
+
+            <ul>
+                <li>Searchable and filterable community resource directory</li>
+                <li>Highlighted community organizations</li>
+                <li>User submission form for new resources</li>
+                <li>Quick-access navigation and clear layout</li>
+            </ul>
+        </section>
+
+        <section class="box">
+            <h2>Sources</h2>
+            <ul>
+                <li>Official organization websites</li>
+                <li>Google Forms (embedded submission form)</li>
+                <li>Gettysburg town square image (Wikimedia Commons / NARA)</li>
+            </ul>
+        </section>
+
+        <!-- ✅ NEW THANK YOU BOX -->
+        <section class="box">
+            <h2>Thank You</h2>
+            <p>
+                Thank you for taking the time to review this project. I appreciate the opportunity to
+                participate in the TSA Webmaster event and to showcase the skills and growth I gained
+                through this experience.
+            </p>
+        </section>
+
+    </div>
 </main>
 
 <footer>
-    <p>Gettysburg Community Resource Hub • About</p>
+    <div class="footer-inner">
+        <div class="footer-left">
+            <div>Gettysburg Community Resource Hub • About</div>
+        </div>
+        <div class="footer-right">
+            <div><strong>Contact Us:</strong></div>
+            <div><a href="mailto:tsa.webmaster.email.2025@gmail.com">tsa.webmaster.email.2025@gmail.com</a></div>
+        </div>
+    </div>
 </footer>
 
 </body>
 </html>
+

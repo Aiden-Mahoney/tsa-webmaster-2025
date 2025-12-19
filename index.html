@@ -7,8 +7,8 @@
 
     <style>
         :root {
-            --maroon: #7a1e1e; /* Gettysburg red */
-            --nav-color: #7a1e1e; /* changed from navy to maroon */
+            --maroon: #7a1e1e;
+            --nav-color: #7a1e1e;
         }
 
         body {
@@ -18,13 +18,10 @@
             color: #333;
         }
 
-        /* Header */
         header {
             color: white;
             padding: 50px 20px;
             text-align: center;
-
-            /* maroon replaced with Gettysburg square image */
             background-image:
                 linear-gradient(rgba(122, 30, 30, 0.65), rgba(122, 30, 30, 0.65)),
                 url("https://upload.wikimedia.org/wikipedia/commons/e/ed/Journey_Through_Hallowed_Ground_Byway_-_Lincoln_Square_in_Downtown_Gettysburg_-_NARA_-_7719715.jpg");
@@ -46,7 +43,6 @@
             margin-right: auto;
         }
 
-        /* Navigation */
         nav {
             background-color: var(--nav-color);
             padding: 10px 0;
@@ -72,7 +68,6 @@
             text-decoration: underline;
         }
 
-        /* Main Content */
         main {
             max-width: 1000px;
             margin: 40px auto;
@@ -91,7 +86,6 @@
             margin-top: 0;
         }
 
-        /* Quick Access Buttons */
         .quick-access-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -124,21 +118,45 @@
         footer {
             background-color: #333;
             color: white;
-            text-align: center;
-            padding: 15px;
+            padding: 18px 15px;
             margin-top: 40px;
+        }
+
+        .footer-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 16px;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .footer-left, .footer-right {
+            flex: 1 1 320px;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        .footer-right a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+            .footer-right { text-align: left; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <h1>Gettysburg Community Resource Hub</h1>
         <p>Connecting Gettysburg and surrounding areas to local support, services, and programs that help our community thrive.</p>
     </header>
 
-    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -149,7 +167,6 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
     <main>
         <section>
             <h2>Welcome</h2>
@@ -181,10 +198,22 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>Gettysburg Community Resource Hub • Built for the community</p>
+        <div class="footer-inner">
+            <div class="footer-left">
+                <div>Gettysburg Community Resource Hub • Built for the community</div>
+                <div style="margin-top:8px;">
+                    <strong>Purpose:</strong> The Gettysburg Community Resource Hub is designed to help residents quickly find local support services,
+                    nonprofit organizations, volunteer opportunities, and community programs in the Gettysburg area.
+                </div>
+            </div>
+            <div class="footer-right">
+                <div><strong>Contact Us:</strong></div>
+                <div><a href="mailto:tsa.webmaster.email.2025@gmail.com">tsa.webmaster.email.2025@gmail.com</a></div>
+            </div>
+        </div>
     </footer>
 
 </body>
 </html>
+
